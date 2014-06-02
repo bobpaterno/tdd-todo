@@ -1,4 +1,4 @@
-/* global describe, it, before */
+/* global describe, it, before, beforeEach */
 /* jshint expr:true */
 'use strict';
 
@@ -24,16 +24,43 @@ describe('User', function(){
     });
   });
 
+  beforeEach(function(done){
+    console.log('before Each');
+    global.nss.db.collection('users').drop(done);
+  });
+
   describe('.register', function(){
-    it('should successfully register a user', function(){
+    before(function(done){
+      //create a user named sally
+      done();
+    });
+
+    it('should successfully register a user', function(done){
+      console.log('IT 1');
       var obj = {email:'bob@p.com', password:'asdf'};
       User.register(obj, function(u){
-        expect(u).to.not.be.null;
+        expect(u).to.be.ok;
         expect(u).to.be.an.instanceof(User);
         expect(u._id).to.be.an.instanceof(Mongo.ObjectID);
         expect(u.password).to.not.equal('asdf');
+        done();
       });
     });
+
+    it('should not successfully register a user', function(done){
+      console.log('IT 2');
+      done();
+      // var obj = {email:'sally@p.com', password:'asdf'};
+      // User.register(obj, function(u){
+      //   expect(u).to.be.null;
+      //   expect(u).to.be.an.instanceof(User);
+      //   expect(u._id).to.be.an.instanceof(Mongo.ObjectID);
+      //   expect(u.password).to.not.equal('asdf');
+      //   done();
+      // });
+    });
+
+
   });
 
 
