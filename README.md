@@ -1,4 +1,4 @@
-Server Template
+Simple To Do Application
 ===============
 
 - Node.js
