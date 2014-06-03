@@ -51,6 +51,11 @@ class Task{
     taskCollection.save(this, ()=>fn() );
   }
 
+  update(obj) {
+    this.title = obj.title;
+    this.due = obj.due;
+    this.color = obj.color;
+  }
 }
 
 module.exports = Task;

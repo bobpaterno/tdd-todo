@@ -134,7 +134,16 @@ describe('Task', function(){
     });
   });
 
-
+  describe('#update', function() {
+    it('should update any of the following, title, due, color', function(done){
+      Task.findById(t3._id.toString(), function(task){
+        task.update({title:'Edit Title3', due:new Date(), color:'purple'});
+        expect(task.title).to.equal('Edit Title3');
+        expect(task.color).to.equal('purple');
+        done();
+      });
+    });
+  });
 
 
 

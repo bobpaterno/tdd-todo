@@ -5,6 +5,13 @@ html
     title= title
     link(href='/less/app.css', rel='stylesheet')
   body
+    #nav-bar
+      span: a(href='/') Home
+      span: a(href='/tasks') Tasks
+      if(user)
+        span: a(href='/logout') Logout
+      else
+        span: a(href='/login') Login/Register
     block content
 
     script(src='/js/vendor/jquery-2.1.1.js')
