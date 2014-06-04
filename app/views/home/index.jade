@@ -1,6 +1,72 @@
 extends ../shared/template
 
 block content
-  .container
-    .login.register
-      button#do Go
+  if(!user.userId)
+    #login-splash
+      .row.clearfix.loginspace
+        .col-sm-12.column
+
+      .row.clearfix
+        .col-sm-2.column
+        .col-sm-3.column
+          button.btn.btn-success.btn-block.btn-lg#login-btn1(type='button') Login
+        .col-sm-2.column
+        .col-sm-3.column
+          button.btn.btn-lg.btn-primary.btn-block#register(type='button') Register
+        .col-sm-2.column
+
+
+      //- .row.clearfix
+      //-   .col-sm-2.column
+      //-   .col-sm-8.column
+      //-     form(role='form')
+      //-       .form-group
+      //-         label(for='emailinput1') Email
+      //-           input.form-control#emailinput1(type='email' name='email')
+      //-       .form-group
+      //-         label(for='passwordinput1') Password
+      //-           input.form-control#passwordinput1(type='password' name='password')
+      //-       button.btn.btn-defaul(type='submit') Submit
+      //-   .col-sm-2.column
+
+      //- a.btn#modal-login(href='#modal-container-login' role='button' data-toggle='modal') Modal
+      //-
+      //- .modal.fade#modal-container-login(role='dialog' aria-labelledby='myModalLabel' aria-hidden='true')
+      //-   .modal-dialog
+      //-     .modal-content
+      //-       .modal-header
+      //-         button.close(type='button' data-dismiss='modal' aria-hidden='true') x
+      //-         h4.modal-title#myModalLabel Login
+      //-       .modal-body Hi
+      //-       .modal-footer
+      //-         button.btn.btn-default(type='button' data-dismiss='modal') Close
+      //-         button.btn.btn-primary(type='button') Save
+
+
+
+//- 	 <a id="modal-login" href="#modal-container-login" role="button" class="btn" data-toggle="modal">Launch demo modal</a>
+//-
+//- 	<div class="modal fade" id="modal-container-login" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+//- 		<div class="modal-dialog">
+//- 			<div class="modal-content">
+//- 				<div class="modal-header">
+//- 					 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+//- 					<h4 class="modal-title" id="myModalLabel">
+//- 						Modal title
+//- 					</h4>
+//- 				</div>
+//- 				<div class="modal-body">
+//- 					...
+//- 				</div>
+//- 				<div class="modal-footer">
+//- 					 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+//-            <button type="button" class="btn btn-primary">Save changes</button>
+//- 				</div>
+//- 			</div>
+//-
+//- 		</div>
+//-
+//- 	</div>
+//-
+//- </div>
+//- <div class="col-md-2 column">

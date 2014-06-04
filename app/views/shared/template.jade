@@ -13,7 +13,6 @@ html
     link(rel='apple-touch-icon-precomposed' href='img/apple-touch-icon-57-precomposed.png')
     link(rel='shortcut icon' href='img/favicon.png')
 
-
   body
     .container
       .row.clearfix
@@ -25,21 +24,7 @@ html
               li: a(href='/tasks') Tasks
               li: a(href='/logout') Logout
 
-        if(!user.userId)
-          .row.clearfix.loginspace
-            .col-md-12.column
-
-          .row.clearfix
-            .col-md-2.column
-            .col-md-3.column
-              button.btn.btn-success.btn-block.btn-lg#login(type='button') Login
-            .col-md-2.column
-            .col-md-3.column
-              button.btn.btn-lg.btn-primary.btn-block#register(type='button') Register
-            .col-md-2.column
-
-
-
+    block content
 
     script(src='/js/vendor/jquery-2.1.1.js')
     script(src='/js/vendor/lodash-2.4.1.js')
